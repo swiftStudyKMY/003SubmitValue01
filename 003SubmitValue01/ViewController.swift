@@ -21,6 +21,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func onSubmit(_ sender: Any) {
+        
+        //1. instantiateViewController의 return 되는 타입이 UIViewController <- 뷰 컨트롤러중 가장 상위 클래스
+        //2. UIViewController / ResultViewController
+        //3. as? / as! nil 발생 가능성을 열어두는 옵셔널 캐스팅및 nil 발생 가능성 무시 강제 캐스팅
+        //4. 옵셔널 캐스팅
+        guard let rvc = self.storyboard?.instantiateViewController(withIdentifier: "RVC") as? ResultViewController else {
+            return
+        }
+        
+        rvc.paramEmail = self.email.text!
+        rvc.paramUpdate = self.isUpdate.isOn
+        rvc.paramInerval = self.interval.value
+        
+        self.present(rvc, animated:true)
+        
+        
+    }
+    
+    
+    
     @IBAction func onSwich(_ sender: UISwitch) {
         
         if(sender.isOn == true){
