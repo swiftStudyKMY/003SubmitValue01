@@ -42,6 +42,24 @@ class ViewController: UIViewController {
         
         
     }
+    //Segue를 이용한 데이터 전달시 prepare사용
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
+        
+        guard let rvc = dest as? ResultViewController else {
+            return
+        }
+        
+        rvc.paramEmail = self.email.text!
+        rvc.paramUpdate = self.isUpdate.isOn
+        rvc.paramInerval = self.interval.value
+    }
+    
+    //action segue 사용시 prepare로 데이터 세팅
+    @IBAction func onPerformSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "ManualSubmit", sender: self)
+        
+    }
     
     
     

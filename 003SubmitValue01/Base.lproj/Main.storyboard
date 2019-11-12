@@ -77,7 +77,7 @@
                     <navigationItem key="navigationItem" title="Setting" id="age-4a-ern">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="w11-SJ-aa6">
                             <connections>
-                                <action selector="onSubmit:" destination="BYZ-38-t0r" id="Z46-B1-rNc"/>
+                                <action selector="onPerformSegue:" destination="BYZ-38-t0r" id="57l-aD-Pzx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
