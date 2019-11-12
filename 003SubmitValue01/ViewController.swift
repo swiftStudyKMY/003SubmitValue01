@@ -32,11 +32,13 @@ class ViewController: UIViewController {
             return
         }
         
-        rvc.paramEmail = self.email.text!
+        rvc.paramEmail = self.email.text! // nil 이여도된다는뜻?
         rvc.paramUpdate = self.isUpdate.isOn
         rvc.paramInerval = self.interval.value
         
-        self.present(rvc, animated:true)
+//        self.present(rvc, animated:true)
+        //Navigation Controller를 이용한 화면이동은 푸시 방식으로 변경
+        self.navigationController?.pushViewController(rvc, animated: true)
         
         
     }
